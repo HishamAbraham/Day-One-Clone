@@ -7,21 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10C3AC3C20DA5A14007ACF2D /* JornalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C3AC3B20DA5A14007ACF2D /* JornalDetailViewController.swift */; };
+		10C3AC3E20DA5A43007ACF2D /* JornalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C3AC3D20DA5A43007ACF2D /* JornalTableViewController.swift */; };
+		10C3AC4020DA5A68007ACF2D /* CreateJornalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C3AC3F20DA5A68007ACF2D /* CreateJornalViewController.swift */; };
+		10C3AC4220DA5A94007ACF2D /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C3AC4120DA5A94007ACF2D /* PhotoCollectionViewController.swift */; };
+		10E9E026211DC16E0002F71E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E9E025211DC16E0002F71E /* Models.swift */; };
 		10F259F020C716DB0008FB02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F259EF20C716DB0008FB02 /* AppDelegate.swift */; };
-		10F259F220C716DB0008FB02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F259F120C716DB0008FB02 /* ViewController.swift */; };
 		10F259F520C716DB0008FB02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10F259F320C716DB0008FB02 /* Main.storyboard */; };
 		10F259F720C716DD0008FB02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10F259F620C716DD0008FB02 /* Assets.xcassets */; };
 		10F259FA20C716DE0008FB02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10F259F820C716DD0008FB02 /* LaunchScreen.storyboard */; };
+		4DC7AB3CE45090F450A36A44 /* Pods_Day_One_Clone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26172F71744D5995EC3EE691 /* Pods_Day_One_Clone.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10C3AC3B20DA5A14007ACF2D /* JornalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JornalDetailViewController.swift; sourceTree = "<group>"; };
+		10C3AC3D20DA5A43007ACF2D /* JornalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JornalTableViewController.swift; sourceTree = "<group>"; };
+		10C3AC3F20DA5A68007ACF2D /* CreateJornalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateJornalViewController.swift; sourceTree = "<group>"; };
+		10C3AC4120DA5A94007ACF2D /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
+		10E9E025211DC16E0002F71E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		10F259EC20C716DB0008FB02 /* Day One Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Day One Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10F259EF20C716DB0008FB02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		10F259F120C716DB0008FB02 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		10F259F420C716DB0008FB02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		10F259F620C716DD0008FB02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10F259F920C716DE0008FB02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10F259FB20C716DE0008FB02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DD3882A969908B9BFE42D4D /* Pods-Day One Clone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Day One Clone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Day One Clone/Pods-Day One Clone.debug.xcconfig"; sourceTree = "<group>"; };
+		26172F71744D5995EC3EE691 /* Pods_Day_One_Clone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Day_One_Clone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4DFFE47926775A787A0B014 /* Pods-Day One Clone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Day One Clone.release.xcconfig"; path = "Pods/Target Support Files/Pods-Day One Clone/Pods-Day One Clone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DC7AB3CE45090F450A36A44 /* Pods_Day_One_Clone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +53,8 @@
 			children = (
 				10F259EE20C716DB0008FB02 /* Day One Clone */,
 				10F259ED20C716DB0008FB02 /* Products */,
+				49F8130E6A54707A5A256E50 /* Pods */,
+				790A8A48ADF2415AFC805560 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +70,34 @@
 			isa = PBXGroup;
 			children = (
 				10F259EF20C716DB0008FB02 /* AppDelegate.swift */,
-				10F259F120C716DB0008FB02 /* ViewController.swift */,
+				10C3AC3B20DA5A14007ACF2D /* JornalDetailViewController.swift */,
+				10C3AC3D20DA5A43007ACF2D /* JornalTableViewController.swift */,
+				10C3AC3F20DA5A68007ACF2D /* CreateJornalViewController.swift */,
+				10C3AC4120DA5A94007ACF2D /* PhotoCollectionViewController.swift */,
+				10E9E025211DC16E0002F71E /* Models.swift */,
 				10F259F320C716DB0008FB02 /* Main.storyboard */,
 				10F259F620C716DD0008FB02 /* Assets.xcassets */,
 				10F259F820C716DD0008FB02 /* LaunchScreen.storyboard */,
 				10F259FB20C716DE0008FB02 /* Info.plist */,
 			);
 			path = "Day One Clone";
+			sourceTree = "<group>";
+		};
+		49F8130E6A54707A5A256E50 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1DD3882A969908B9BFE42D4D /* Pods-Day One Clone.debug.xcconfig */,
+				E4DFFE47926775A787A0B014 /* Pods-Day One Clone.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		790A8A48ADF2415AFC805560 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26172F71744D5995EC3EE691 /* Pods_Day_One_Clone.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 10F259FE20C716DE0008FB02 /* Build configuration list for PBXNativeTarget "Day One Clone" */;
 			buildPhases = (
+				060BA6E1B857149E70A6D20B /* [CP] Check Pods Manifest.lock */,
 				10F259E820C716DB0008FB02 /* Sources */,
 				10F259E920C716DB0008FB02 /* Frameworks */,
 				10F259EA20C716DB0008FB02 /* Resources */,
+				D9D363370C3F623D4EED9876 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,12 +168,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		060BA6E1B857149E70A6D20B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Day One Clone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9D363370C3F623D4EED9876 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Day One Clone/Pods-Day One Clone-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Toucan/Toucan.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toucan.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Day One Clone/Pods-Day One Clone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		10F259E820C716DB0008FB02 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10F259F220C716DB0008FB02 /* ViewController.swift in Sources */,
+				10C3AC4220DA5A94007ACF2D /* PhotoCollectionViewController.swift in Sources */,
+				10C3AC4020DA5A68007ACF2D /* CreateJornalViewController.swift in Sources */,
+				10C3AC3E20DA5A43007ACF2D /* JornalTableViewController.swift in Sources */,
+				10E9E026211DC16E0002F71E /* Models.swift in Sources */,
+				10C3AC3C20DA5A14007ACF2D /* JornalDetailViewController.swift in Sources */,
 				10F259F020C716DB0008FB02 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +363,7 @@
 		};
 		10F259FF20C716DE0008FB02 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DD3882A969908B9BFE42D4D /* Pods-Day One Clone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,6 +382,7 @@
 		};
 		10F25A0020C716DE0008FB02 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4DFFE47926775A787A0B014 /* Pods-Day One Clone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

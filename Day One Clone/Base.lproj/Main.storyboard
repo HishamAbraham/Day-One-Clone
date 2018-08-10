@@ -138,14 +138,22 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Title" id="sj1-4D-Uqx">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cbm-5p-yEB"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="FtN-4a-xN0"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cbm-5p-yEB">
+                                            <connections>
+                                                <action selector="cancelTapped:" destination="hLb-4i-bmY" id="Nbc-5D-LrE"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="FtN-4a-xN0">
+                                            <connections>
+                                                <action selector="saveTapped:" destination="hLb-4i-bmY" id="o4E-wV-N0N"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9X4-so-aci">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.29803921568627451" green="0.75686274509803919" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7dL-c5-Bkg">
                                 <rect key="frame" x="10" y="587" width="355" height="70"/>
@@ -159,6 +167,9 @@
                                                     <constraint firstAttribute="width" constant="70" id="IG6-PD-FgJ"/>
                                                 </constraints>
                                                 <state key="normal" image="calendar"/>
+                                                <connections>
+                                                    <action selector="blueCalendarTapped:" destination="hLb-4i-bmY" eventType="touchUpInside" id="ZVV-co-eQN"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RRg-DC-bog">
                                                 <rect key="frame" x="80" y="0.0" width="70" height="70"/>
@@ -166,6 +177,9 @@
                                                     <constraint firstAttribute="width" constant="70" id="jeZ-34-P9S"/>
                                                 </constraints>
                                                 <state key="normal" image="blueCamera"/>
+                                                <connections>
+                                                    <action selector="blueCameraTapped:" destination="hLb-4i-bmY" eventType="touchUpInside" id="jex-49-k9a"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -186,14 +200,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kj3-C9-Bhe">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kj3-C9-Bhe">
                                 <rect key="frame" x="0.0" y="549" width="375" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="02F-7K-zCg"/>
                                 </constraints>
                                 <state key="normal" title="Set Date"/>
+                                <connections>
+                                    <action selector="setDateTapped:" destination="hLb-4i-bmY" eventType="touchUpInside" id="bAF-7e-C0d"/>
+                                </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="0t1-41-NPe">
+                            <datePicker hidden="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="0t1-41-NPe">
                                 <rect key="frame" x="0.0" y="64" width="375" height="485"/>
                                 <date key="date" timeIntervalSinceReferenceDate="555379810.24215806">
                                     <!--2018-08-08 00:10:10 +0000-->
@@ -226,6 +243,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Nmn-dl-oEL"/>
                     </view>
+                    <connections>
+                        <outlet property="aboveNaveBarView" destination="9X4-so-aci" id="mTh-SW-ZCj"/>
+                        <outlet property="bottomConstraint" destination="pQn-nJ-Ws4" id="hbA-CG-0Se"/>
+                        <outlet property="datePicker" destination="0t1-41-NPe" id="YeP-NX-8hw"/>
+                        <outlet property="journalTextView" destination="IPy-B8-Lr7" id="exZ-i7-twD"/>
+                        <outlet property="navBar" destination="Ejn-Fc-gZl" id="Hzz-sf-mUW"/>
+                        <outlet property="setDate" destination="Kj3-C9-Bhe" id="TF4-uM-VKc"/>
+                        <outlet property="stackView" destination="4kv-oq-KPi" id="u0Y-Lq-1Lh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CU8-Mb-1es" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
