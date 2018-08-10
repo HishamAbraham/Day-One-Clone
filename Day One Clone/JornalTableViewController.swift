@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class JornalTableViewController: UITableViewController {
    
@@ -18,6 +19,12 @@ class JornalTableViewController: UITableViewController {
         super.viewDidLoad()
         whitePlusButton.imageView?.contentMode = .scaleAspectFit
          whiteCameraButton.imageView?.contentMode = .scaleAspectFit
+        if let realm = try? Realm() {
+            let entries = realm.objects(Entry.self)
+            print(entries[0].text)
+            print(entries[0].date)
+            print(entries[0].pictures.count)
+        }
     }
 
     @IBAction func cameraTapped(_ sender: UIButton) {
@@ -29,6 +36,14 @@ class JornalTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToNew" {
+            if let text = sender as? String {
+                if text == "camera" {
+                    let createVC = segue.destination as? CreateJornalViewController
+                    createVC?.startWithCamera = true
+                }
+            }
+        }
        
     }
     
