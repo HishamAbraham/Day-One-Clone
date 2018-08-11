@@ -15,16 +15,26 @@ class JornalTableViewController: UITableViewController {
     @IBOutlet weak var whitePlusButton: UIButton!
     
     @IBOutlet weak var whiteCameraButton: UIButton!
+    
+    var entries : Results<Entry>?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         whitePlusButton.imageView?.contentMode = .scaleAspectFit
-         whiteCameraButton.imageView?.contentMode = .scaleAspectFit
+        whiteCameraButton.imageView?.contentMode = .scaleAspectFit
+
+    }
+    
+    func getEntries() {
         if let realm = try? Realm() {
-            let entries = realm.objects(Entry.self)
-            print(entries[0].text)
-            print(entries[0].date)
-            print(entries[0].pictures.count)
+            entries = realm.objects(Entry.self).sorted(byKeyPath: "date", ascending: false)
+            tableView.reloadData()
+            
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getEntries()
     }
 
     @IBAction func cameraTapped(_ sender: UIButton) {
@@ -54,25 +64,42 @@ class JornalTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        if let entries = self.entries{
+            return entries.count
+        } else {
+            return 0
+            
+        }
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "journalCell", for: indexPath) as? JournalCell {
+            if let entry = entries?[indexPath.row] {
+                cell.previewTextLabel.text = entry.text
+                if let image = entry.pictures.first?.thunbnail(){
+                    cell.imageViewWidth.constant = 100
+                    cell.imagePreviewImageView.image = image
+                    
+                } else {
+                    cell.imageViewWidth.constant = 0
+                }
+            }
+            
+            return cell
+        }
 
-        // Configure the cell...
 
-        return cell
+        return UITableViewCell()
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+        
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -119,4 +146,13 @@ class JornalTableViewController: UITableViewController {
     }
     */
 
+}
+class JournalCell : UITableViewCell {
+    
+    @IBOutlet weak var previewTextLabel: UILabel!
+    @IBOutlet weak var imagePreviewImageView: UIImageView!
+    @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var imageViewWidth: NSLayoutConstraint!
 }

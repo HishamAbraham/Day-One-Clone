@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -66,13 +67,80 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="M0w-rf-482">
-                                <rect key="frame" x="0.0" y="228" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="journalCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="journalCell" rowHeight="100" id="M0w-rf-482" customClass="JournalCell" customModule="Day_One_Clone" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="228" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M0w-rf-482" id="UO7-Dg-n8j">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0JI-n7-oqw">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="99.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="MRM-TP-yim"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JAN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVE-xh-P5w">
+                                            <rect key="frame" x="299" y="11" width="60" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="AGU-le-ZP7"/>
+                                                <constraint firstAttribute="height" constant="21" id="y51-El-ugY"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FO1-zn-PrG">
+                                            <rect key="frame" x="299" y="68" width="60" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="WFK-KC-yrc"/>
+                                                <constraint firstAttribute="height" constant="21" id="o9K-ye-nzh"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFS-ei-tww">
+                                            <rect key="frame" x="299" y="32" width="60" height="36"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="qbW-O0-LZW"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FJ ASDHF'AKLSDHFLKASHDF" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81g-Nl-wwz">
+                                            <rect key="frame" x="105" y="0.0" width="189" height="99.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="0JI-n7-oqw" secondAttribute="bottom" id="600-xh-z7T"/>
+                                        <constraint firstItem="SFS-ei-tww" firstAttribute="leading" secondItem="81g-Nl-wwz" secondAttribute="trailing" constant="5" id="6Q3-sg-8ab"/>
+                                        <constraint firstItem="QVE-xh-P5w" firstAttribute="top" secondItem="UO7-Dg-n8j" secondAttribute="topMargin" id="758-mZ-eZd"/>
+                                        <constraint firstItem="0JI-n7-oqw" firstAttribute="top" secondItem="UO7-Dg-n8j" secondAttribute="top" id="FSW-Zx-zuN"/>
+                                        <constraint firstItem="0JI-n7-oqw" firstAttribute="leading" secondItem="UO7-Dg-n8j" secondAttribute="leading" id="JWI-DJ-A9c"/>
+                                        <constraint firstAttribute="bottom" secondItem="81g-Nl-wwz" secondAttribute="bottom" id="KHd-eb-e72"/>
+                                        <constraint firstItem="SFS-ei-tww" firstAttribute="trailing" secondItem="UO7-Dg-n8j" secondAttribute="trailingMargin" id="RfE-wk-3eD"/>
+                                        <constraint firstItem="FO1-zn-PrG" firstAttribute="bottom" secondItem="UO7-Dg-n8j" secondAttribute="bottomMargin" id="S3a-tb-Plu"/>
+                                        <constraint firstItem="FO1-zn-PrG" firstAttribute="trailing" secondItem="UO7-Dg-n8j" secondAttribute="trailingMargin" id="Vfk-8H-7T2"/>
+                                        <constraint firstItem="SFS-ei-tww" firstAttribute="top" secondItem="QVE-xh-P5w" secondAttribute="bottom" id="X3l-NL-Bsa"/>
+                                        <constraint firstItem="FO1-zn-PrG" firstAttribute="top" secondItem="SFS-ei-tww" secondAttribute="bottom" id="ZJi-JZ-E6A"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="QVE-xh-P5w" secondAttribute="trailing" id="eip-wa-QeH"/>
+                                        <constraint firstItem="81g-Nl-wwz" firstAttribute="leading" secondItem="0JI-n7-oqw" secondAttribute="trailing" constant="5" id="j6c-om-rZd"/>
+                                        <constraint firstItem="81g-Nl-wwz" firstAttribute="top" secondItem="UO7-Dg-n8j" secondAttribute="top" id="r6O-1b-bGL"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dayLabel" destination="SFS-ei-tww" id="dlE-xr-ngA"/>
+                                    <outlet property="imagePreviewImageView" destination="0JI-n7-oqw" id="kc5-1V-l0t"/>
+                                    <outlet property="imageViewWidth" destination="MRM-TP-yim" id="tOF-Og-SUI"/>
+                                    <outlet property="monthLabel" destination="QVE-xh-P5w" id="Weo-gH-k3d"/>
+                                    <outlet property="previewTextLabel" destination="81g-Nl-wwz" id="xhH-hU-qVK"/>
+                                    <outlet property="yearLabel" destination="FO1-zn-PrG" id="oHA-Xw-aEw"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
