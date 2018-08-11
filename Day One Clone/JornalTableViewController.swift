@@ -15,6 +15,7 @@ class JornalTableViewController: UITableViewController {
     @IBOutlet weak var whitePlusButton: UIButton!
     
     @IBOutlet weak var whiteCameraButton: UIButton!
+    @IBOutlet weak var topHeaderView: UIView!
     
     var entries : Results<Entry>?
     
@@ -22,6 +23,13 @@ class JornalTableViewController: UITableViewController {
         super.viewDidLoad()
         whitePlusButton.imageView?.contentMode = .scaleAspectFit
         whiteCameraButton.imageView?.contentMode = .scaleAspectFit
+        
+        topHeaderView.backgroundColor = UIColor(red: 0.298, green: 0.757, blue: 0.988, alpha: 1.00) //4cc1fc
+        navigationController?.navigationBar.barTintColor = UIColor(red: 0.298, green: 0.757, blue: 0.988, alpha: 1.00) //4cc1fc
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
+        navigationController?.title = "Day One Clone"
 
     }
     
@@ -53,6 +61,13 @@ class JornalTableViewController: UITableViewController {
                     createVC?.startWithCamera = true
                 }
             }
+        } else  if segue.identifier == "tableToDetail" {
+            if let entry = sender as? Entry {
+                if let detailVC = segue.destination as? JornalDetailViewController {
+                    detailVC.entry = entry
+                }
+            }
+            
         }
        
     }
@@ -87,6 +102,9 @@ class JornalTableViewController: UITableViewController {
                 } else {
                     cell.imageViewWidth.constant = 0
                 }
+                cell.monthLabel.text = entry.monthPrettyString()
+                cell.dayLabel.text = entry.dayPrettyString()
+                cell.yearLabel.text = entry.yearPrettyString()
             }
             
             return cell
@@ -99,6 +117,12 @@ class JornalTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
         
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let entry = entries?[indexPath.row] {
+        performSegue(withIdentifier: "tableToDetail", sender: entry)
+        }
     }
 
     /*

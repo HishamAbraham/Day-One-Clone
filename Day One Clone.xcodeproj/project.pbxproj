@@ -12,6 +12,7 @@
 		10C3AC4020DA5A68007ACF2D /* CreateJornalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C3AC3F20DA5A68007ACF2D /* CreateJornalViewController.swift */; };
 		10C3AC4220DA5A94007ACF2D /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C3AC4120DA5A94007ACF2D /* PhotoCollectionViewController.swift */; };
 		10E9E026211DC16E0002F71E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E9E025211DC16E0002F71E /* Models.swift */; };
+		10E9E028211F7BDD0002F71E /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E9E027211F7BDD0002F71E /* SplitViewController.swift */; };
 		10F259F020C716DB0008FB02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F259EF20C716DB0008FB02 /* AppDelegate.swift */; };
 		10F259F520C716DB0008FB02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10F259F320C716DB0008FB02 /* Main.storyboard */; };
 		10F259F720C716DD0008FB02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10F259F620C716DD0008FB02 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		10C3AC3F20DA5A68007ACF2D /* CreateJornalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateJornalViewController.swift; sourceTree = "<group>"; };
 		10C3AC4120DA5A94007ACF2D /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
 		10E9E025211DC16E0002F71E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		10E9E027211F7BDD0002F71E /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		10F259EC20C716DB0008FB02 /* Day One Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Day One Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10F259EF20C716DB0008FB02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10F259F420C716DB0008FB02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				10F259F620C716DD0008FB02 /* Assets.xcassets */,
 				10F259F820C716DD0008FB02 /* LaunchScreen.storyboard */,
 				10F259FB20C716DE0008FB02 /* Info.plist */,
+				10E9E027211F7BDD0002F71E /* SplitViewController.swift */,
 			);
 			path = "Day One Clone";
 			sourceTree = "<group>";
@@ -196,12 +199,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Day One Clone/Pods-Day One Clone-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
 				"${BUILT_PRODUCTS_DIR}/Toucan/Toucan.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toucan.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10C3AC4220DA5A94007ACF2D /* PhotoCollectionViewController.swift in Sources */,
+				10E9E028211F7BDD0002F71E /* SplitViewController.swift in Sources */,
 				10C3AC4020DA5A68007ACF2D /* CreateJornalViewController.swift in Sources */,
 				10C3AC3E20DA5A43007ACF2D /* JornalTableViewController.swift in Sources */,
 				10E9E026211DC16E0002F71E /* Models.swift in Sources */,

@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import Spring
 
 class CreateJornalViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
@@ -25,10 +26,11 @@ class CreateJornalViewController: UIViewController, UIImagePickerControllerDeleg
     
     @IBOutlet weak var aboveNaveBarView: UIView!
     
-    var date = Date()
+
     var imagePicker = UIImagePickerController()
     var images : [UIImage] = []
     var startWithCamera = false
+    var entry = Entry()
     
     
     
@@ -61,9 +63,8 @@ class CreateJornalViewController: UIViewController, UIImagePickerControllerDeleg
     }
     
     func updateDate() {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "E, MMM d, yyyy"
-        navBar.topItem?.title = formatter.string(from: date)
+
+        navBar.topItem?.title = entry.datePrettyString()
     }
 
     @objc func keyboardWillHide(notification:Notification)  {
@@ -89,9 +90,7 @@ class CreateJornalViewController: UIViewController, UIImagePickerControllerDeleg
     
     @IBAction func saveTapped(_ sender: UIBarButtonItem) {
         if let realm = try? Realm() {
-            let entry = Entry()
             entry.text = journalTextView.text
-            entry.date = date
             for image in images {
                 let picture = Picture(image: image)
                 entry.pictures.append(picture)
@@ -110,7 +109,7 @@ class CreateJornalViewController: UIViewController, UIImagePickerControllerDeleg
         journalTextView.isHidden = false
         datePicker.isHidden = true
         setDate.isHidden = true
-        date = datePicker.date
+        entry.date = datePicker.date
         updateDate()
     }
     
@@ -118,7 +117,7 @@ class CreateJornalViewController: UIViewController, UIImagePickerControllerDeleg
         journalTextView.isHidden = true
         datePicker.isHidden = false
         setDate.isHidden = false
-        datePicker.date = date
+        datePicker.date = entry.date
     }
     
     @IBAction func blueCameraTapped(_ sender: Any) {
@@ -130,7 +129,7 @@ class CreateJornalViewController: UIViewController, UIImagePickerControllerDeleg
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let chosenImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             images.append(chosenImage)
-            let imageView = UIImageView()
+            let imageView = SpringImageView()
             imageView.heightAnchor.constraint(equalToConstant: 70.0).isActive=true
             imageView.widthAnchor.constraint(equalToConstant: 70.0).isActive=true
             imageView.image = chosenImage
@@ -138,6 +137,10 @@ class CreateJornalViewController: UIViewController, UIImagePickerControllerDeleg
             imageView.clipsToBounds = true
             stackView.addArrangedSubview(imageView)
             imagePicker.dismiss(animated: true){
+                //Animate
+                imageView.animation = "pop"
+                imageView.duration = 2.0
+                imageView.animate()
                 
             }
             

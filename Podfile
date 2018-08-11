@@ -8,5 +8,6 @@ target 'Day One Clone' do
   # Pods for Day One Clone
  pod 'RealmSwift', '~> 3.4.0'
  pod 'Toucan', '~> 1.0.0'
+ pod 'Spring', '~> 1.0.5'
 
 end
